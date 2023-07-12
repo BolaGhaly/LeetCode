@@ -25,7 +25,6 @@ var romanToInt = function(s) {
                 sArr.shift()
             }
             else {
-                console.log("1")
                 romanNum += romanObj[sArr[i]]
                 sArr.shift()
             }
@@ -37,7 +36,6 @@ var romanToInt = function(s) {
                 sArr.shift()
             }
             else {
-                console.log("2")
                 romanNum += romanObj[sArr[i]]
                 sArr.shift()
             }
@@ -49,13 +47,11 @@ var romanToInt = function(s) {
                 sArr.shift()
             }
             else {
-                console.log("3")
                 romanNum += romanObj[sArr[i]]
                 sArr.shift()
             }
         }
         else {
-            console.log("4")
             romanNum += romanObj[sArr[i]]
             sArr.shift()
         }       
