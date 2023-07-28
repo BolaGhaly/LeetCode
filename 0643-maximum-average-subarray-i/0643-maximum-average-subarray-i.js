@@ -15,7 +15,7 @@ var findMaxAverage = function(nums, k) {
 
     for (let i = k; i < nums.length; i++) {
         tempSum = ((tempSum * k) - nums[i - k] + nums[i]) / k;
-        maxAvg = Math.max(tempSum, maxAvg)
+        maxAvg = Math.max(tempSum, maxAvg);
     }
     
     return maxAvg;
