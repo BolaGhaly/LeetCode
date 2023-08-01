@@ -3,33 +3,10 @@
  * @return {boolean}
  */
 var isPalindrome = function(s) {
-    const trimStr = s.trim();
-    if (trimStr.length === 0) return true;
-    
-    let i = 0;
-    let j = trimStr.length - 1;
-    let isCharAlphanumeric = /[a-zA-Z0-9]/;
-    let leftChar = trimStr.charAt(i).toLowerCase();
-    let rightChar = trimStr.charAt(j).toLowerCase();
+    s = s.toLowerCase().replace(/[^a-z0-9]/gi,'');
 
-    while (i < j) {
-        console.log(i,j, leftChar, rightChar)
-        if (!isCharAlphanumeric.test(leftChar)) i++;
-        if (!isCharAlphanumeric.test(rightChar)) j--;
-        
-        if (isCharAlphanumeric.test(leftChar) 
-            && isCharAlphanumeric.test(rightChar)
-            && leftChar !== rightChar) {
-            return false;
-        } else if (isCharAlphanumeric.test(leftChar) 
-            && isCharAlphanumeric.test(rightChar)
-            && leftChar === rightChar) {
-            i++;
-            j--;
-        }
-        
-        leftChar = trimStr.charAt(i).toLowerCase();
-        rightChar = trimStr.charAt(j).toLowerCase();
+    for (let i = 0, j = s.length - 1; i <= j; i++, j--) {
+        if (s.charAt(i) !== s.charAt(j)) return false;
     }
     
     return true;
