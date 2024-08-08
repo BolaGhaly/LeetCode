@@ -4,11 +4,9 @@
  * @return {number}
  */
 var strStr = function(haystack, needle) {
-    let newHaystackArr = [];
-
     for (let i = 0; i <= haystack.length - needle.length; i++) {
-        newHaystackArr[i] = haystack.substring(i, i + needle.length);
-        if (newHaystackArr[i] === needle) return i;
+        let tempStr = haystack.substring(i, i + needle.length);
+        if (tempStr === needle) return i;
     }
     
     return -1;
